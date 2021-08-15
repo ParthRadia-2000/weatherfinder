@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.page-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  padding: 10px;
+}
+.city-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 20px;
+  font-size: 1.3em;
+  text-align: center;
+  padding: 2px;
+  margin: 5px;
+}
+.find-button {
+  background-color: #007bff;
+  border-color: #007bff;
+  cursor: pointer !important;
+}
+.find-button:focus {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.find-button span {
+  color: white;
+  padding: 10px;
+  font-weight: 100;
+}
+@media screen and (max-width: 320px) {
+  .city-name {
+    flex-direction: column;
+  }
+  .find-button {
+    margin-top: 10px;
+  }
+}

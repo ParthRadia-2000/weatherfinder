@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.info-display {
+  margin: 5px;
+}
+.display-city {
+  font-size: 40px;
+  font-weight: bolder;
+}
+.display {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+div.type .max-title,
+div.type .min-title {
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+div.type .max-value,
+div.type .min-value {
+  font-weight: bolder;
+  margin-right: 10px;
+}
+.temprature,
+.humidity,
+.pressure,
+.wind {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2 !important;
+  box-shadow: 4px 4px 4px 4px #f1f1f1;
+  margin-bottom: 10px;
+  transition: 0.5 all ease-in-out;
+}
+.temprature:hover,
+.humidity:hover,
+.pressure:hover,
+.wind:hover {
+  transform: scale(1.05);
+}
+.temprature div.value,
+.humidity div.value,
+.pressure div.value,
+.wind div.value {
+  margin-top: 15px !important;
+  margin-right: 8px;
+}
+.temprature div.value span,
+.humidity div.value span,
+.pressure div.value span,
+.wind div.value span {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.temprature .icon svg,
+.humidity .icon svg,
+.pressure .icon svg,
+.wind .icon svg {
+  font-size: 60px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+  margin-right: 8px;
+}
+.temprature .icon svg {
+  background-color: #007bff;
+}
+.humidity .icon svg {
+  background-color: rgb(128, 0, 128);
+}
+.pressure .icon svg {
+  background-color: palevioletred;
+}
+.wind .icon svg {
+  background-color: rgb(70, 247, 70);
+}

@@ -1,0 +1,13 @@
+/*.col-md-4 {
+  border: 2px solid red;
+}
+
+.col-md-8 {
+  border: 2px solid green;
+}
+*/
+#info-left {
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: center;
+}
