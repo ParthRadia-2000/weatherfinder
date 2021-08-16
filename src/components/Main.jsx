@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./css/main.css";
 import "./css/TempInfo.css";
 import "./css/header.css";
@@ -12,7 +14,31 @@ import { WiBarometer } from "react-icons/wi";
 import { WiStrongWind } from "react-icons/wi";
 import { VscLocation } from "react-icons/vsc";
 
+toast.configure();
 const Main = () => {
+  const notify = () => {
+    toast.error("⚠️ Please Enter City Name", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+  const warn = () => {
+    toast.warn("😔 Please Enter Valid City Name", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: 0,
+    });
+  };
   const [city, setCity] = useState("delhi"); // by default the given city is delhi
   const [temprature, setTemprature] = useState(0);
   const [maxtemp, setMaxTemp] = useState(0);
@@ -28,7 +54,7 @@ const Main = () => {
   const showData = async () => {
     const a = city;
     if (a === "") {
-      alert("PLEASE ENTER CITY NAME");
+      notify();
     } else {
       try {
         const response = await axios.get(
@@ -48,7 +74,7 @@ const Main = () => {
         setWind(res.wind.speed);
       } catch (error) {
         if (error.message === "Request failed with status code 404") {
-          alert("PLEASE ENTER VALID CITY NAME");
+          warn();
           setCity("delhi");
         }
       }
@@ -85,7 +111,7 @@ const Main = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-md-4" id="info-right">
+          <div className="col-md-6" id="info-right">
             <div className="location">
               <div className="info-display">
                 <div className="display-city">
@@ -147,7 +173,7 @@ const Main = () => {
             </div>
             <div className="location-info"></div>
           </div>
-          <div className="col-md-8" id="info-left">
+          <div className="col-md-6" id="info-left">
             <Forcast lat={latitude} lon={longitude} />
           </div>
         </div>
